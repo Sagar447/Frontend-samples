@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>smsGateway</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  
+  <h2><b>Gateway APP Testing </b></h2>
+
+    <div id="div">
+    <form   action="/action_page.php">
+      <fieldset>
+        <legend>Fill the form</legend>
+          <label for="Base url">Base url:</label><br>
+          <input type="text" id="Base url" name="Base url"><br>
+          <label for="API key">API key:</label><br>
+          <input type="text" id="API key" name="API key"><br>
+          <label for="Phone no">Phone no:</label><br>
+          <input type="text" id="Phone no" name="Phone no"><br>
+          <label for="Message">Message:</label><br>
+          <textarea id="Message" name="Message" rows="3" cols="22">
+          </textarea><br>
+          <input type="submit" id="submit" name="submit">
+      </fieldset>>
+    </form>
+    
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function()
+      {
+        if(this.readyState == 4 && this.status == 200)
+        {
+          document.getElementById("Message").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "ajax_info.txt", true);
+      xhttp.send();
+    </script>
+    
+  </div>
+</body>
+</html>
